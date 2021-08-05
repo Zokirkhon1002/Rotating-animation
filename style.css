@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.932);
+    color: #000;
+    overflow-x: hidden;
+    margin: 0;
+}
+.container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    transition: all 0.4s linear;
+}
+.hamburger-menu{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.hamberger {
+    background-color: rgba(143, 206, 243,0.9);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.4s linear;
+}
+.hamberger button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background-color: transparent;
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+}
+.hamberger button:focus {
+    outline: none;
+}
+.hamberger button#open {
+    left: 60%;
+}
+
+.hamberger button#close{
+    top: 60%;
+    transform: rotate(100deg);
+    transform-origin: top left;
+}
+
+
+.main {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.main h1 {
+    margin: 0;
+}
+.main small {
+    color: #444;
+    font-style: italic;
+}
+.main p {
+    color: #111;
+    line-height: 1.5;
+}
+.main img {
+    max-width: 100%;
+}
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+nav ul{
+    list-style-type: none;
+    padding-left: 30px;
+}
+nav ul li{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transition: all 0.4s ease;
+    transform: translateX(-100%);
+    cursor: pointer;
+}
+nav ul li i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+nav ul li + li{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+.container.show-nav .hamberger {
+    transform: rotate(-85deg);
+}
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.2s;
+}
